@@ -17,8 +17,8 @@ int main(void)
 	}
 	while (v <= 'A')
 	{
-		putchar(c);
-		c++;
+		putchar(v);
+		v++;
 	}
 	putchar('\n');
 
