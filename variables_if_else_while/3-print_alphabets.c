@@ -7,19 +7,17 @@
  */
 int main(void)
 {
-	char c = 'a';
-	char v = 'A';
+	char c;
 
-	while (c <= 'z')
-	{
+	/* Affichage des lettres minuscules */
+	for (c = 'a'; c <= 'z'; c++)
 		putchar(c);
-		c++;
-	}
-	while (v <= 'A')
-	{
-		putchar(v);
-		v++;
-	}
+
+	/* Affichage des lettres majuscules */
+	for (c = 'A'; c <= 'Z'; c++)
+		putchar(c);
+
+	/* Nouvelle ligne */
 	putchar('\n');
 
 	return (0);
