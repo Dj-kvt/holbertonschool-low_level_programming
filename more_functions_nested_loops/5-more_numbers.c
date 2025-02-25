@@ -5,12 +5,12 @@
  */
 void more_numbers(void)
 {
-	char numbers[31] = "01234567891011121314\n";
+	char numbers[21] = "01234567891011121314\n";
 	int i = 0;
 
-	while (i < 310)
+	while (i < 210)
 	{
-		_putchar(numbers[i % 31]);
+		_putchar(numbers[i % 21]);
 		i++;
 	}
 }
