@@ -1,17 +1,28 @@
 #include "main.h"
-#include <string.h>
 
 /**
- * *_strncpy - Une fonction qui concatèn
- * @dest: La chaîne de destinatio
- * @src: La chaîne sourc
- * @n: taille
+ * _strncpy - Copies at most n characters.
+ * @dest: The destination string.
+ * @src: The source string.
+ * @n: The maximum number of characters to copy from src.
  *
- * Return: Un pointeur vers la chaîne de destination (dest)
+ * Return: A pointer to the destination string.
  */
-char *_strncpy(char *dest, char *src, int n)
+char *_strncpy(char *dest, const char *src, int n)
 {
-	strncpy(dest, src, n);
+	int i = 0;
+
+	while (i < n && src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
 
 	return (dest);
 }

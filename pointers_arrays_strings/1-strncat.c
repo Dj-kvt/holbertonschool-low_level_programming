@@ -1,17 +1,30 @@
 #include "main.h"
-#include <string.h>
 
 /**
- * *_strncat - Une fonction qui concatène deux chaînes de caract
- * @dest: La chaîne de destination à laquelle on va ajouter la chaîne sou
- * @src: La chaîne source à ajouter à la chaîne de desti
- * @n: taille
+ * _strncat - Concatenates two strings using at most n bytes from src.
+ * @dest: The destination string to which `src` is appended.
+ * @src: The source string to be appended to `dest`.
+ * @n: The maximum number of bytes to be used from `src`.
  *
- * Return: Un pointeur vers la chaîne de destination (dest)
+ * Return: A pointer to the resulting string `dest`.
  */
-char *_strncat(char *dest, char *src, int n)
+char *_strncat(char *dest, const char *src, int n)
 {
-	strncat(dest, src, n);
+	char *ptr = dest;
+
+	while (*ptr != '\0')
+	{
+		ptr++;
+	}
+
+	while (n-- && *src != '\0')
+	{
+		*ptr = *src;
+		ptr++;
+		src++;
+	}
+
+	*ptr = '\0';
 
 	return (dest);
 }
