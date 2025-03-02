@@ -1,17 +1,30 @@
 #include "main.h"
-#include <string.h>
 
 /**
- * *_strcat - Une fonction qui concatène deux chaînes de caractèr
- * @dest: La chaîne de destination à laquelle on va ajouter la chaîne sourc.
- * @src: La chaîne source à ajouter à la chaîne de destinati
+ * _strcat - Concatenates two strings
+ * @dest: The destination string to which `src` is appended
+ * @src: The source string to be appended to `dest`
  *
- * Return: Un pointeur vers la chaîne de destination (dest)
+ * Return: A pointer to the resulting string `dest`
  */
 char *_strcat(char *dest, char *src)
 {
-	strcat(dest, src);
+	char *ptr = dest;
 
-	return (dest);
+	while (*ptr != '\0')
+	{
+	ptr++;
+	}
+
+	while (*src != '\0')
+	{
+		*ptr = *src;
+		ptr++;
+		src++;
+	}
+
+	*ptr = '\0';
+
+	return dest;
 }
 
