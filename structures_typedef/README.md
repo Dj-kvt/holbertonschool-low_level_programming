@@ -1,0 +1,1 @@
+Starting to use the structure and create the alias with typedef
