@@ -1,0 +1,1 @@
+starting of application with function pointer
