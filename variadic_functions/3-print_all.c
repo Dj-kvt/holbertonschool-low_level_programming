@@ -30,11 +30,6 @@ void print_all(const char * const format, ...)
 				str = "(nil)";
 			printf("%s", str);
 		}
-		else
-		{
-			i++;
-			continue;
-		}
 		separator = ", ";
 		i++;
 	}
