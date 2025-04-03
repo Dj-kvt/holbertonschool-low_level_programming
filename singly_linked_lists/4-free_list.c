@@ -7,14 +7,14 @@
  */
 void free_list(list_t *head)
 {
-    list_t *temp;
+	list_t *temp;
 
-    while (head != NULL)
-    {
-        temp = head;      /* Save current node */
-        head = head->next; /* Move to next node */
-        
-        free(temp->str);  /* Free the duplicated string */
-        free(temp);       /* Free the node itself */
-    }
+	while (head != NULL)
+	{
+		temp = head;	   /* Save current node */
+		head = head->next; /* Move to next node */
+
+		free(temp->str); /* Free the duplicated string */
+		free(temp);		 /* Free the node itself */
+	}
 }
