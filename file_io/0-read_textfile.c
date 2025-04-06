@@ -18,24 +18,20 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ssize_t bytesRead, bytesWritten;
 	char *buffer;
 
-	/* If filename is NULL, return 0 as per the requirement */
 	if (filename == NULL)
 		return (0);
 
-	/* Open the file with read-only permission */
 	fd = open(filename, O_RDONLY);
-	if (fd == -1) /* Check if file open failed */
+	if (fd == -1)
 		return (0);
 
-	/* Allocate memory for the buffer to hold the data */
 	buffer = malloc(sizeof(char) * letters);
-	if (buffer == NULL) /* If memory allocation failed, return 0 */
+	if (buffer == NULL)
 	{
 		close(fd);
 		return (0);
 	}
 
-	/* Read up to 'letters' bytes from the file into the buffer */
 	bytesRead = read(fd, buffer, letters);
 	if (bytesRead == -1) /* If reading failed, return 0 */
 	{
@@ -44,7 +40,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	/* Write the data from the buffer to standard output (stdout) */
 	bytesWritten = write(STDOUT_FILENO, buffer, bytesRead);
 	if (bytesWritten == -1 || bytesWritten != bytesRead)
 	{
