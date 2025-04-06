@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "main.h"
 
 /**
  * read_textfile - reads a text file and prints it to POSIX standard output
@@ -45,17 +46,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	/* Write the data from the buffer to standard output (stdout) */
 	bytesWritten = write(STDOUT_FILENO, buffer, bytesRead);
-	if (bytesWritten == -1 || bytesWritten != bytesRead) /* Check if writing failed or incomplete */
+	if (bytesWritten == -1 || bytesWritten != bytesRead)
 	{
 		free(buffer);
 		close(fd);
 		return (0);
 	}
 
-	/* Free allocated memory and close the file descriptor */
 	free(buffer);
 	close(fd);
 
-	/* Return the number of bytes actually read and written */
 	return (bytesRead);
 }
