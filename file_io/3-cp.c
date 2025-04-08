@@ -13,7 +13,7 @@
  *
  * Return: 0 on success, or a specific exit code on failure.
  */
-int main(int argc, char *argv[])
+int cp_c(int argc, char *argv[])
 {
 	int file_from, file_to, bytes_read, bytes_written;
 	char buffer[1024];
