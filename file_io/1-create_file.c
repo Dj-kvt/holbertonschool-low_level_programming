@@ -25,7 +25,7 @@ int create_file(const char *filename, char *text_content)
 	}
 
 	/* Create the file with rw- permissions (0664) */
-	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0664);
+	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 	if (fd == -1)
 		return (-1);
 
